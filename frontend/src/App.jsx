@@ -1,8 +1,13 @@
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <div>
-      <h1>🥗 NutriAI</h1>
-      <p>Track your calories using AI.</p>
+      <Navbar />
+
+      <h1>Track Calories with AI</h1>
+
+      <p>Tell AI what you ate.</p>
     </div>
   );
 }
