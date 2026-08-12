@@ -38,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-  color: yellow;
+  color: rgb(255, 0, 0);
 }
 
 .hero {
