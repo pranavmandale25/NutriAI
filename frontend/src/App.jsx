@@ -1,14 +1,12 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-
-      <h1>Track Calories with AI</h1>
-
-      <p>Tell AI what you ate.</p>
-    </div>
+      <Hero />
+    </>
   );
 }
 
