@@ -1,12 +1,13 @@
 function Navbar() {
   return (
-    <nav>
-      <h2>🥗 NutriAI</h2>
+    <nav className="navbar">
+      <h2 className="logo">🥗 NutriAI</h2>
 
-      <div>
-        <a href="#">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Login</a>
+      <div className="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#meal">Analyze</a>
+        <a href="#bmi">BMI</a>
       </div>
     </nav>
   );

@@ -3,6 +3,8 @@ import axios from "axios";
 function MealInput() {
   const [meal, setMeal] = useState("");
   const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [history, setHistory] = useState([]);
 
 async function analyzeMeal() {
   if (meal.trim() === "") {
@@ -10,7 +12,8 @@ async function analyzeMeal() {
     return;
   }
 
-  setResult("Analyzing your meal...");
+  setLoading(true);
+  setResult("");
 
   try {
     const response = await axios.post(
@@ -21,12 +24,13 @@ async function analyzeMeal() {
     );
 
     setResult(response.data);
-
+    setHistory((prev) => [...prev, response.data]);
   } catch (error) {
     console.log(error);
     setResult("Something went wrong!");
   }
 
+  setLoading(false);
 }
   return (
     <section className="meal-input">
@@ -47,9 +51,12 @@ async function analyzeMeal() {
       <br />
 
       <button onClick={analyzeMeal}>Analyze with AI</button>
-      <h3>Your Meal:</h3>
+      {loading && (
+  <div className="loading">
+    🤖 AI is analyzing your meal...
+  </div>
+)}
 
-      <p>{meal}</p>
       {result && (
 
       <div className="result">
@@ -72,8 +79,23 @@ async function analyzeMeal() {
 
      )}
 
+     {history.length > 0 && (
+  <div className="history">
+    <h2>📜 Meal History</h2>
+
+    {history.map((item, index) => (
+      <div className="history-card" key={index}>
+        <p><b>{item.meal}</b></p>
+        <p>🔥 {item.calories} kcal</p>
+      </div>
+    ))}
+  </div>
+)}
+
     </section>
   );
+
+  
 }
 
 export default MealInput;

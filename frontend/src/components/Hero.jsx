@@ -1,14 +1,29 @@
 function Hero() {
   return (
-    <section className="hero">
-      <h1>AI Powered Calorie Tracker</h1>
+    <section className="hero" id="home">
 
-      <p>
-        Track your daily calories by simply telling AI what you ate.
-        Get calories, protein, carbs, fat, BMI insights and healthy suggestions.
-      </p>
+      <div className="hero-content">
 
-      <button>Get Started</button>
+        <h1>
+          AI Powered <span>Nutrition Assistant</span>
+        </h1>
+
+        <p>
+          Simply tell NutriAI what you ate today and get an instant AI-powered
+          estimate of calories, protein, carbohydrates, fat, BMI insights, and
+          healthier food suggestions.
+        </p>
+
+        <button>✨ Analyze Your Meal</button>
+
+      </div>
+
+      <div className="hero-image">
+
+        🍎🥗🥛🍗
+
+      </div>
+
     </section>
   );
 }
