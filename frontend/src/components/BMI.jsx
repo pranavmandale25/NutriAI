@@ -39,7 +39,7 @@ function BMI() {
 
     return(
 
-        <section className="bmi">
+        <section className="bmi" id="bmi">
 
             <h2>⚖️ BMI Calculator</h2>
 

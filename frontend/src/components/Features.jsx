@@ -2,7 +2,7 @@ import FeatureCard from "./FeatureCard";
 
 function Features() {
   return (
-    <section className="features">
+    <section className="features" id="features">
 
       <FeatureCard
         icon="🤖"
