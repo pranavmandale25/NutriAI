@@ -37,7 +37,7 @@ function MealInput() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/analyze",
+        "https://nutriai-v4b0.onrender.com/analyze",
         {
           meal: meal,
         }
