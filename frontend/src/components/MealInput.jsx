@@ -19,6 +19,11 @@ function MealInput() {
     localStorage.setItem("mealHistory", JSON.stringify(history));
   }, [history]);
 
+  const totalCalories = history.reduce(
+  (total, item) => total + Number(item.calories || 0),
+  0
+);
+
   async function analyzeMeal() {
     if (meal.trim() === "") {
       alert("Please enter your meal first!");
@@ -27,6 +32,8 @@ function MealInput() {
 
     setLoading(true);
     setResult("");
+
+    
 
     try {
       const response = await axios.post(
@@ -140,6 +147,28 @@ function MealInput() {
 
       {history.length > 0 && (
         <div className="history">
+
+        {history.length > 0 && (
+  <div className="daily-summary">
+
+    <h2>📊 Today's Summary</h2>
+
+    <div className="summary-content">
+
+      <div>
+        <h3>{totalCalories}</h3>
+        <p>Total Calories</p>
+      </div>
+
+      <div>
+        <h3>{history.length}</h3>
+        <p>Meals Analyzed</p>
+      </div>
+
+    </div>
+
+  </div>
+)}
 
           <h2>📜 Meal History</h2>
 
